@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  whatsapp-proxy:
+    build: .
+    container_name: whatsapp-proxy-dev
+    ports:
+      - "3000:3000"
+    environment:
+      - WEBHOOK_URL=http://host.docker.internal:5678/webhook/ai-whatsapp
+      - PORT=3000
+    volumes:
+      # Mount source code for live reloading during development
+      - ./src:/app
+      # Persist authentication state
+      - ./auth_info:/app/auth_info
+      # Avoid mounting node_modules (use container's version)
+      - /app/node_modules
+    restart: unless-stopped
+    networks:
+      - whatsapp-network
+
+networks:
+  whatsapp-network:
+    driver: bridge

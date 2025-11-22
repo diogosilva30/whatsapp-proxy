@@ -1,0 +1,26 @@
+{
+  "name": "whatsapp-proxy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diogosilva30/whatsapp-proxy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/diogosilva30/whatsapp-proxy/issues"
+  },
+  "homepage": "https://github.com/diogosilva30/whatsapp-proxy#readme",
+  "dependencies": {
+    "@whiskeysockets/baileys": "^6.7.9",
+    "express": "^5.1.0",
+    "qrcode-terminal": "^0.12.0",
+    "pino": "^8.16.0"
+  }
+}
