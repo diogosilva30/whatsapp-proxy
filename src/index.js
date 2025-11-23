@@ -57,10 +57,14 @@ async function startBot() {
     // Send incoming message to n8n webhook
     const axios = require("axios");
 
-    await axios.post(WEBHOOK_URL, {
-      from,
-      message: text,
-    });
+    try {
+      await axios.post(WEBHOOK_URL, {
+        from,
+        message: text,
+      });
+    } catch (error) {
+      console.error("Failed to send message to webhook:", error.message);
+    }
   });
 
   // Endpoint to send messages from n8n to WhatsApp
